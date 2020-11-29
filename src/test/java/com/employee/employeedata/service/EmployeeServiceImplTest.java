@@ -1,6 +1,5 @@
 package com.employee.employeedata.service;
 
-import com.employee.employeedata.model.Employee;
 import com.employee.employeedata.repository.IEmployeeRepository;
 import com.employee.employeedata.testutility.TestUtility;
 import org.junit.jupiter.api.Assertions;
@@ -9,8 +8,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 @SpringBootTest
 public class EmployeeServiceImplTest {
