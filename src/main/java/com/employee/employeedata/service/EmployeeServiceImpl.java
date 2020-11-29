@@ -21,7 +21,7 @@ public class EmployeeServiceImpl implements IEmployeeService  {
     public List<Employee> updateEmpolyeeRecord(String place,int percentage)
     {
         List<Employee> updatedEmployeeRecords=null;
-        if(place!=null && (percentage!=0 && percentage<=54))
+        if(place!=null && (percentage!=0 && percentage<=55))
         {
             List<Employee> employees = repository.findByPlace(place);
             if (employees != null && !employees.isEmpty()) {
