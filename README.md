@@ -210,7 +210,8 @@ Response:
 
 ### Create an endpoint to return the range of salaries for a given Competency.
 SampleRequest:
-3)http://localhost:8080/fetchRangeOfSalariesForGivenCompetency/10
+
+3) http://localhost:8080/fetchRangeOfSalariesForGivenCompetency/10
 Sample Response:
 {
     "range": "100000-400000"
