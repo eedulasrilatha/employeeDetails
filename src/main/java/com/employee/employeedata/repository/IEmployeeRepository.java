@@ -1,6 +1,7 @@
 package com.employee.employeedata.repository;
 
 import com.employee.employeedata.model.Employee;
+import com.employee.employeedata.model.Range;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,5 +19,5 @@ public interface IEmployeeRepository extends JpaRepository<Employee,Integer> {
     Page<Employee> findByPlace(String place, Pageable pageable);
 
     @Query(value = "select  min(SALARY)||'-'||max(SALARY) as range_SALARY  from employee where COMPETENCY=:competency",nativeQuery = true)
-     String findByCompetency(int competency);
+    String findByCompetency(int competency);
 }

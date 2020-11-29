@@ -2,6 +2,7 @@ package com.employee.employeedata.controller;
 
 import com.employee.employeedata.exception.CustomizedException;
 import com.employee.employeedata.model.Employee;
+import com.employee.employeedata.model.Range;
 import com.employee.employeedata.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,7 +40,7 @@ public class EmployeeControllerImpl implements IEmployeeController {
     public ResponseEntity<Object> retrieveRangeOfSalariesBasedOnCompetency(@PathVariable("competency") int competency)
     {
             ResponseEntity<Object> responseEntity=null;
-            Object rangeOfSalary= employeeService.retrieveRangeOfSalariesBasedOnCompetency(competency);
+             Range rangeOfSalary=employeeService.retrieveRangeOfSalariesBasedOnCompetency(competency);
            return responseEntity= new ResponseEntity<>(rangeOfSalary,HttpStatus.OK);
     }
 }

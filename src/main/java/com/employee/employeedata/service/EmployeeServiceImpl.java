@@ -1,6 +1,7 @@
 package com.employee.employeedata.service;
 import com.employee.employeedata.exception.CustomizedException;
 import com.employee.employeedata.model.Employee;
+import com.employee.employeedata.model.Range;
 import com.employee.employeedata.repository.IEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -60,11 +61,14 @@ public class EmployeeServiceImpl implements IEmployeeService  {
         }
         return paginationResponse;
     }
-public Object retrieveRangeOfSalariesBasedOnCompetency(int competency)
+public Range retrieveRangeOfSalariesBasedOnCompetency(int competency)
 {
-  Object salaryRange=repository.findByCompetency(competency);
-  if(salaryRange!=null)
-      return salaryRange;
+  String salaryRange=repository.findByCompetency(competency);
+  if(salaryRange!=null) {
+      Range range = new Range();
+      range.setRange(salaryRange);
+      return range;
+  }
   else
       throw new CustomizedException("unable to retrieve the salary range for provided competency ###"+competency);
 }
